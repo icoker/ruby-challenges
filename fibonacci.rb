@@ -6,6 +6,7 @@ end
 
 def iterative_fib(n)
     fib = Array.new(n, 0)
+    return 0 if n == 0
     fib.each_with_index do |n, i|
         if i >= 1
             fib[i] = fib[i-1] + fib[i-2]
@@ -17,9 +18,13 @@ def iterative_fib(n)
 end
 
 
+puts "Which digit of the Fibonacci series?"
+num = gets.to_i
+puts "-----"
+puts "Recursive: " + recursive_fib(num).to_s
+puts "Iterative: " + iterative_fib(num).to_s
+puts
 
-puts iterative_fib(35)
-puts recursive_fib(35)
 
 require 'benchmark'
 num = 35
