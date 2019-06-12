@@ -1,5 +1,6 @@
 
 def recursive_fib(n)
+    return 0 if n == 0
     return n if n <= 1
     recursive_fib(n-1) + recursive_fib(n-2)
 end
