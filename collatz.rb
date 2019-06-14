@@ -3,7 +3,7 @@ def collatz (n)
     maxNum = 0
 
     n.times do |num|
-        i = 1
+        i = 0
         element = num
         if num > 1
 
@@ -24,3 +24,9 @@ end
 
 puts "How many digits?"
 collatz(gets.to_i)
+
+require 'benchmark'
+num = 1000000
+Benchmark.bm do |x|
+    x.report("Collatz") { collatz(num) }
+end
